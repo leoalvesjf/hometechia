@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const newsEntries = await getCollection('noticias');
+  return newsEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} | HomeTechIA`} description={entry.data.description}>
+    <main class="container post-container">
+        <article class="full-post">
+            <header class="post-header">
+                {entry.data.badge && <span class="badge">{entry.data.badge}</span>}
+                <h1>{entry.data.title}</h1>
+                <p class="post-meta">Publicado em {entry.data.pubDate.toLocaleDateString('pt-BR')} • {entry.data.category}</p>
+            </header>
+
+            {entry.data.image && <img src={entry.data.image} alt={entry.data.title} class="featured-image" />}
+
+            <section class="post-body">
+                <Content />
+            </section>
+        </article>
+    </main>
+</Layout>
