@@ -49,13 +49,13 @@ const otherPosts = sortedPosts.slice(1);
 						<div
 							class="post-img"
 							style={`background-image: url('${post.data.image || "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400"}')`}
-						></div>
+						/>
 						<div class="post-data">
 							<span class="category">{post.data.category}</span>
 							<h3>{post.data.title}</h3>
 							<p>{post.data.description}</p>
 							<a
-								href={`/noticias/${post.slug}`}
+								href={`/hometechia/noticias/${post.slug}`}
 								class="read-more"
 							>
 								Ler mais →

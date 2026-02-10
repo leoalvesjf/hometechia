@@ -3,7 +3,7 @@ title: "IA Local: O Guia para Empresas que Querem Segurança e Custo Zero"
 description: "Descubra como rodar modelos de linguagem dentro da sua própria infraestrutura, eliminando custos de API e protegendo dados sensíveis."
 pubDate: 2026-02-10
 category: "IA"
-image: "/assets/MoneyIA.png"
+image: "/hometechia/assets/MoneyIA.png"
 badge: "Renda Extra"
 ---
 
