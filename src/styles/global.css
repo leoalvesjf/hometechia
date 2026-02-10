@@ -138,6 +138,13 @@ body {
 }
 
 /* BOTÕES */
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .btn-main {
     background: var(--accent);
     color: var(--bg);
@@ -156,7 +163,6 @@ body {
 
 .btn-secondary {
     color: white;
-    margin-left: 15px;
     text-decoration: none;
     border-bottom: 1px solid var(--accent);
 }
@@ -373,6 +379,11 @@ p strong span {
 
     .hero {
         padding: 60px 0;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .mobile-toggle {
