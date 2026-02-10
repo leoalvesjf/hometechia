@@ -1,0 +1,10 @@
+# Robots.txt para HomeTechIA
+User-agent: *
+Allow: /
+
+# Bloqueia pastas de sistema ou rascunhos se houver
+Disallow: /temp/
+Disallow: /drafts/
+
+# Indica o caminho do Sitemap para o Google
+Sitemap: https://hometechia.com.br/sitemap.xml
