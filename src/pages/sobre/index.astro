@@ -47,6 +47,7 @@ import Layout from "@/layouts/Layout.astro";
                         action="https://formspree.io/f/xnjbnrzy"
                         method="POST"
                         class="contact-form"
+                        id="contact-form"
                     >
                         <div class="form-group">
                             <label for="name">Nome</label>
@@ -85,12 +86,9 @@ import Layout from "@/layouts/Layout.astro";
                                 placeholder="Sua ideia ou notícia..."
                                 required></textarea>
                         </div>
-                        <button
-                            type="submit"
-                            class="btn-main"
-                            style="width: 100%; cursor: pointer;"
-                            >Enviar Mensagem</button
-                        >
+                        <button type="submit" class="btn-main">
+                            Enviar Mensagem
+                        </button>
                     </form>
                 </section>
             </section>
