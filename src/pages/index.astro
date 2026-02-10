@@ -1,9 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
-const allPosts = await getCollection('noticias');
-const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const allPosts = await getCollection("noticias");
+const sortedPosts = allPosts.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 const featuredPost = sortedPosts[0];
 const otherPosts = sortedPosts.slice(1);
 ---
@@ -11,17 +13,29 @@ const otherPosts = sortedPosts.slice(1);
 <Layout title="HomeTechIA | O Futuro do HomeLab e IA Local">
 	<section class="hero">
 		<div class="container">
-			{featuredPost && (
-				<>
-					<span class="badge">{featuredPost.data.badge}</span>
-					<h1>{featuredPost.data.title}</h1>
-					<p>{featuredPost.data.description}</p>
-					<div class="hero-btns">
-						<a href={`/noticias/${featuredPost.slug}`} class="btn-main">Ler Artigo Completo</a>
-						<a href={`/noticias/${featuredPost.slug}#hardware`} class="btn-secondary">Ver Hardware Recomendado</a>
-					</div>
-				</>
-			)}
+			{
+				featuredPost && (
+					<>
+						<span class="badge">{featuredPost.data.badge}</span>
+						<h1>{featuredPost.data.title}</h1>
+						<p>{featuredPost.data.description}</p>
+						<div class="hero-btns">
+							<a
+								href={`/noticias/${featuredPost.slug}`}
+								class="btn-main"
+							>
+								Ler Artigo Completo
+							</a>
+							<a
+								href={`/noticias/${featuredPost.slug}#hardware`}
+								class="btn-secondary"
+							>
+								Ver Hardware Recomendado
+							</a>
+						</div>
+					</>
+				)
+			}
 		</div>
 	</section>
 
@@ -29,18 +43,27 @@ const otherPosts = sortedPosts.slice(1);
 		<h2 class="section-title">Últimas do HomeTechIA</h2>
 
 		<div class="grid-posts">
-			{sortedPosts.map((post) => (
-				<article class="post-card">
-					<div class="post-img" style={`background-image: url('${post.data.image || 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400'}')`}>
-					</div>
-					<div class="post-data">
-						<span class="category">{post.data.category}</span>
-						<h3>{post.data.title}</h3>
-						<p>{post.data.description}</p>
-						<a href={`/noticias/${post.slug}`} class="read-more">Ler mais →</a>
-					</div>
-				</article>
-			))}
+			{
+				otherPosts.map((post) => (
+					<article class="post-card">
+						<div
+							class="post-img"
+							style={`background-image: url('${post.data.image || "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400"}')`}
+						></div>
+						<div class="post-data">
+							<span class="category">{post.data.category}</span>
+							<h3>{post.data.title}</h3>
+							<p>{post.data.description}</p>
+							<a
+								href={`/noticias/${post.slug}`}
+								class="read-more"
+							>
+								Ler mais →
+							</a>
+						</div>
+					</article>
+				))
+			}
 		</div>
 	</main>
 </Layout>

@@ -1,38 +1,57 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = "HomeTechIA | O Futuro do HomeLab e IA Local" } = Astro.props;
+const { title, description = "HomeTechIA | O Futuro do HomeLab e IA Local" } =
+	Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<header class="navbar">
 			<div class="container nav-content">
 				<a href="/" class="logo">HomeTech<span>IA</span></a>
-				<nav>
+
+				<button class="mobile-toggle" aria-label="Abrir menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+
+				<nav class="nav-menu">
 					<ul class="nav-links">
 						<li><a href="/">Home</a></li>
-						<li><a href="/homelab">HomeLab</a></li>
-						<li><a href="/#ia">IA</a></li>
 						<li><a href="/sobre">Sobre</a></li>
 					</ul>
+					<button class="btn-main nav-btn">Newsletter</button>
 				</nav>
-				<button class="btn-main" style="padding: 8px 15px; font-size: 0.8rem;">Newsletter</button>
 			</div>
 		</header>
+
+		<script>
+			const mobileToggle = document.querySelector(".mobile-toggle");
+			const navMenu = document.querySelector(".nav-menu");
+
+			mobileToggle?.addEventListener("click", () => {
+				navMenu?.classList.toggle("active");
+				mobileToggle?.classList.toggle("active");
+			});
+		</script>
 
 		<slot />
 
