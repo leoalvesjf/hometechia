@@ -3,7 +3,7 @@ title: "HomeLab em 2026: Vale o Investimento?"
 description: "Análise completa sobre custos, IA local e soberania de dados para desenvolvedores."
 pubDate: 2026-02-10
 category: "HomeLab"
-image: "/hometechia/assets/homelab_v1.png"
+image: "/assets/homelab_v1.png"
 badge: "Análise de Mercado 2026"
 ---
 
