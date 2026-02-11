@@ -3,5 +3,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
     site: 'https://www.hometechia.com.br',
+    base: '/', // Adicione esta linha
     integrations: [sitemap()]
 });
