@@ -369,6 +369,20 @@ p strong span {
     margin-bottom: 20px;
 }
 
+.highlight {
+    color: #4cc9f0;
+    font-weight: 700;
+}
+
+.callout {
+    background: #0f172a;
+    padding: 18px;
+    border-left: 4px solid #4cc9f0;
+    border-radius: 8px;
+    margin: 24px 0;
+}
+
+
 .contact-section p {
     color: var(--text-muted);
     margin-bottom: 40px;
